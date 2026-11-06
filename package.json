@@ -11,15 +11,16 @@
     "serve": "vitepress serve docs"
   },
   "dependencies": {
-    "@sugarat/theme": "^0.5.32"
+    "@sugarat/theme": "^0.5.1"
   },
   "directories": {
     "doc": "docs"
   },
   "devDependencies": {
     "pagefind": "^1.5.2",
+    "sass": "^1.108.0",
     "typescript": "^5.9.3",
-    "vitepress": "2.0.0-alpha.20"
+    "vitepress": "^1.6.3"
   },
   "pnpm": {
     "peerDependencyRules": {
