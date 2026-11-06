@@ -1,0 +1,26 @@
+backend:
+  name: github
+  repo: mingzi6/ming-blog
+  branch: main
+  auth_methods: [token, oauth]
+
+media_folder: public/uploads
+public_folder: /uploads
+
+publish_mode: editorial_workflow
+
+collections:
+  - name: posts
+    label: 文章管理
+    folder: docs/posts
+    create: true
+    slug: '{{year}}-{{month}}-{{day}}-{{slug}}'
+    fields:
+      - { label: '标题', name: 'title', widget: 'string' }
+      - { label: '发布日期', name: 'date', widget: 'datetime', format: 'YYYY-MM-DD HH:mm:ss' }
+      - { label: '作者', name: 'author', widget: 'string', default: 'Mr·明先森' }
+      - { label: '封面图', name: 'cover', widget: 'image', required: false }
+      - { label: '标签', name: 'tags', widget: 'list', required: false }
+      - { label: '分类', name: 'categories', widget: 'list', required: false }
+      - { label: '是否草稿', name: 'draft', widget: 'boolean', default: false }
+      - { label: '正文', name: 'body', widget: 'markdown' }

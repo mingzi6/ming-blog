@@ -17,6 +17,7 @@
     "doc": "docs"
   },
   "devDependencies": {
+    "fs-extra": "^11.4.1",
     "pagefind": "^1.5.2",
     "sass": "^1.108.0",
     "typescript": "^5.9.3",

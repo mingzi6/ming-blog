@@ -1,5 +1,6 @@
 import { defineConfig } from 'vitepress'
-
+import { copy } from 'fs-extra'
+import { resolve } from 'path'
 // 导入主题的配置
 import { blogTheme } from './blog-theme.ts'
 
@@ -60,5 +61,21 @@ export default defineConfig({
     search: {
       provider: 'local'
     }
+  },
+
+  vite: {
+    plugins: [
+      {
+        name: 'copy-admin',
+        async writeBundle() {
+          // resolve 自动定位：项目根目录/admin
+          const src = resolve(__dirname, '../../admin')
+          const dest = resolve(__dirname, '../dist/admin')
+          await copy(src, dest, {
+            overwrite: true
+          })
+        }
+      }
+    ]
   }
 })
