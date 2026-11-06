@@ -1,5 +1,5 @@
 backend:
-  name: github-api
+  name: github
   repo: mingzi6/ming-blog
   branch: main
 media_folder: "docs/public/images"
